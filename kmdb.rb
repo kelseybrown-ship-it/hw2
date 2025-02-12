@@ -85,18 +85,148 @@
 # TODO!
 
 # Prints a header for the movies output
-puts "Movies"
-puts "======"
-puts ""
+# puts "Movies"
+# puts "======"
+# puts ""
 
 # Query the movies data and loop through the results to display the movies output.
 # TODO!
 
 # Prints a header for the cast output
-puts ""
-puts "Top Cast"
-puts "========"
-puts ""
+# puts ""
+# puts "Top Cast"
+# puts "========"
+# puts ""
 
 # Query the cast data and loop through the results to display the cast output for each movie.
 # TODO!
+
+#drops tables to start over if needed
+Studio.destroy_all
+Movie.destroy_all
+Actor.destroy_all
+Role.destroy_all 
+
+#add studio name into the studio table
+new_studio = Studio.new
+new_studio["name"] = "Warner Bros."
+new_studio.save
+
+puts "There are #{Studio.all.count} studios." 
+puts new_studio.inspect 
+
+#add movies into the movie table 
+#need to figure out how to put in the studio_id 
+
+new_movie = Movie.new
+new_movie["title"] = "Batman Begins"
+new_movie["year_released"] = "2005"
+new_movie["rated"] = "PG-13"
+new_movie.save 
+
+new_movie = Movie.new
+new_movie["title"] = "The Dark Knight"
+new_movie["year_released"] = "2008"
+new_movie["rated"] = "PG-13"
+new_movie.save
+
+new_movie = Movie.new
+new_movie["title"] = "The Dark Knight Rises"
+new_movie["year_released"] = "2012"
+new_movie["rated"] = "PG-13"
+new_movie.save
+
+puts "There are #{Movie.all.count} movies." 
+puts new_movie.inspect 
+
+#add actors into the actor table
+new_actor = Actor.new
+new_actor["name"] = "Christian Bale"
+new_actor.save
+
+new_actor = Actor.new
+new_actor["name"] = "Michael Caine"
+new_actor.save
+
+new_actor = Actor.new
+new_actor["name"] = "Liam Neeson"
+new_actor.save
+
+new_actor = Actor.new
+new_actor["name"] = "Katie Holmes"
+new_actor.save
+
+new_actor = Actor.new
+new_actor["name"] = "Gary Oldman"
+new_actor.save
+
+new_actor = Actor.new
+new_actor["name"] = "Heath Ledger"
+new_actor.save
+
+new_actor = Actor.new
+new_actor["name"] = "Aaron Eckhart"
+new_actor.save
+
+new_actor = Actor.new
+new_actor["name"] = "Maggie Gyllenhaal"
+new_actor.save
+
+new_actor = Actor.new
+new_actor["name"] = "Tom Hardy"
+new_actor.save
+
+new_actor = Actor.new
+new_actor["name"] = "Joseph Gordon-Levitt"
+new_actor.save
+
+new_actor = Actor.new
+new_actor["name"] = "Anne Hathaway"
+new_actor.save
+
+puts "There are #{Actor.all.count} actors." 
+puts new_actor.inspect 
+
+#add characters into the roles table 
+new_role = Role.new
+new_role["character_name"] = "Bruce Wayne"
+new_role.save
+
+new_role = Role.new
+new_role["character_name"] = "Alfred"
+new_role.save
+
+new_role = Role.new
+new_role["character_name"] = "Ra's Al Ghul"
+new_role.save
+
+new_role = Role.new
+new_role["character_name"] = "Rachel Dawes"
+new_role.save
+
+new_role = Role.new
+new_role["character_name"] = "Commissioner Gordon"
+new_role.save
+
+new_role = Role.new
+new_role["character_name"] = "Joker"
+new_role.save
+
+new_role = Role.new
+new_role["character_name"] = "Harvey Dent"
+new_role.save
+
+new_role = Role.new
+new_role["character_name"] = "Bane"
+new_role.save
+
+new_role = Role.new
+new_role["character_name"] = "John Blake"
+new_role.save
+
+new_role = Role.new
+new_role["character_name"] = "Selina Kyle"
+new_role.save
+
+puts "There are #{Role.all.count} roles." 
+puts new_role.inspect 
