@@ -116,24 +116,26 @@ puts "There are #{Studio.all.count} studios."
 puts new_studio.inspect 
 
 #add movies into the movie table 
-#need to figure out how to put in the studio_id 
 
 new_movie = Movie.new
 new_movie["title"] = "Batman Begins"
 new_movie["year_released"] = "2005"
 new_movie["rated"] = "PG-13"
+new_movie["studio_id"] = new_studio.id
 new_movie.save 
 
 new_movie = Movie.new
 new_movie["title"] = "The Dark Knight"
 new_movie["year_released"] = "2008"
 new_movie["rated"] = "PG-13"
+new_movie["studio_id"] = new_studio.id
 new_movie.save
 
 new_movie = Movie.new
 new_movie["title"] = "The Dark Knight Rises"
 new_movie["year_released"] = "2012"
 new_movie["rated"] = "PG-13"
+new_movie["studio_id"] = new_studio.id
 new_movie.save
 
 puts "There are #{Movie.all.count} movies." 
@@ -188,6 +190,8 @@ puts "There are #{Actor.all.count} actors."
 puts new_actor.inspect 
 
 #add characters into the roles table 
+#add movie id 
+#add actor id 
 new_role = Role.new
 new_role["character_name"] = "Bruce Wayne"
 new_role.save
